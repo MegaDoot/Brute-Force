@@ -25,12 +25,12 @@ function * combinations (...options) {
             values[n] = options[n][values[n]];
         }
         if (i % 1000 == 0) {
-            console.log(`At ${i} out of ${to} (trying ${values.join("")})`);
+            console.log(`At ${i} - ${Math.floor(100 * i / to)}%} (trying ${values.join("")})`);
         }
         yield values.join("");
     }
 }
-console.log(Array.from(combinations("abcdefg", "123")));
+console.log(Array.from(combinations("ABC", "abc", "123")));
 
 /*
 for (let word of combinations(alphabet.toUpperCase(), alphabet, alphabet, "0123456789")) {
