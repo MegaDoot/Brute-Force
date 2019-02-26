@@ -18,7 +18,7 @@ function * combinations (...options) {
     console.log("Up to:", to);
     for (var i = 0; i < to; i++){
         for (let pos = 0; pos < options.length; pos++) {
-            combo[pos] = (Math.floor(i / Math.floor(repetitions[pos] / options[pos].length))) % options[pos].length
+            combo[pos] = Math.floor(i / Math.ceil(repetitions[pos] / options[pos].length)) % options[pos].length
         }
         values = combo;
         for (let n = 0; n < values.length; n++) {
@@ -30,10 +30,9 @@ function * combinations (...options) {
         yield values.join("");
     }
 }
+console.log(Array.from(combinations("abcdefg", "123")));
 
-//console.log(Array.from(combinations(alphabet.toUpperCase(), alphabet, alphabet, alphabet, "123")));
-
-
+/*
 for (let word of combinations(alphabet.toUpperCase(), alphabet, alphabet, "0123456789")) {
     document.getElementsByTagName('input')[3].value = word
     document.getElementsByTagName('input')[4].click()
@@ -43,3 +42,4 @@ for (let word of combinations(alphabet.toUpperCase(), alphabet, alphabet, "01234
     }
 }
 console.log("No match found");
+*/
